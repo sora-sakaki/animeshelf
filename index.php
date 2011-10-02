@@ -1,16 +1,24 @@
 <?php
 require_once dirname(__FILE__).'/lib/Twitter.php';
+require_once dirname(__FILE__).'/config.php';
 
-// twitter information
-$consumer_key = 'niJ3erGVJu0wFlr8L6Fkg';
-$consumer_secret = '2zybw6Fclw1bW3jWSCyNUawkDJtFFWGCeFcQgGrjUY';
+session_start();
+if(isset($_SESSION['userName'])){
+    print('welcome : '.$_SESSION['userName']);
+    print('<br>');
+} else {
+    print('not logining');
+    print('<br>');
+}
+
+
 
 try {
     $twitter = new Twitter();
     $oauth = $twitter->oAuth($consumer_key, $consumer_secret);
     $requestToken = $oauth->getRequestToken();
     $url = $oauth->getAuthorizeUrl($requestToken);
-    print($url);
+    print('<a href="'.$url.'"><img src="image/sign-in-with-twitter-l.png"></a>');
 } catch (Exception $e) {
     echo $e;
 }
