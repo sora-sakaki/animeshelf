@@ -20,7 +20,7 @@ $oauth_verifier = $_GET['oauth_verifier'];
 
 try {
     $token = $oauth->getAccessToken($oauth_verifier);
-    $_SESSION['userName'] = $token['screen_name'];
+    $_SESSION['oauthToken'] = $token;
     header("HTTP/1.1 301");
     header("Location: {$rootURL}");
 } catch (Exception $e) {

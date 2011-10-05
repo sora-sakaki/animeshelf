@@ -11,8 +11,8 @@ $smarty->config_dir = dirname(__FILE__).'/configs/';
 $smarty->cache_dir = dirname(__FILE__).'/cache/';
 
 session_start();
-if(isset($_SESSION['userName'])){
-  $smarty->assign('userName', $_SESSION['userName']);
+if(isset($_SESSION['oauthToken']['screen_name'])){
+  $smarty->assign('userName', $_SESSION['oauthToken']['screen_name']);
   $smarty->display('index_login.tpl');
 } else {
   try {
@@ -28,5 +28,4 @@ if(isset($_SESSION['userName'])){
   $smarty->assign('loginURL',$url);
   $smarty->display('index_notlogin.tpl');
 }
-
 

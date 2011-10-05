@@ -15,7 +15,7 @@
 <li><h2>{$userName}</h2></li>
 <li><h2><a href="/add/">みた登録</a></h2></li>
 <li><h2><a href="/shelf/">My シェルフ</a></h2></li>
-<li><h2><a href="/logout/">ログアウト</a></h2></li>
+<li><h2><a href="/logout.php">ログアウト</a></h2></li>
 </ul>
 </nav>
 </header>
