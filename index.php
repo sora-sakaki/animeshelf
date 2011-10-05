@@ -10,28 +10,23 @@ $smarty->compile_dir = dirname(__FILE__).'/templates_c/';
 $smarty->config_dir = dirname(__FILE__).'/configs/';
 $smarty->cache_dir = dirname(__FILE__).'/cache/';
 
-$smarty->display('template.html');
-/*
 session_start();
 if(isset($_SESSION['userName'])){
-    print('welcome : '.$_SESSION['userName']);
-    print('<br>');
+  $smarty->assign('userName', $_SESSION['userName']);
+  $smarty->display('index_login.tpl');
 } else {
-    print('not logining');
-    print('<br>');
+  try {
+      $twitter = new Twitter();
+      $oauth = $twitter->oAuth($consumer_key, $consumer_secret);
+      $requestToken = $oauth->getRequestToken();
+      $url = $oauth->getAuthorizeUrl($requestToken);
+      $_SESSION['twitter'] = $twitter;
+      $_SESSION['oauth'] = $oauth;
+  } catch (Exception $e) {
+      echo $e;
+  }
+  $smarty->assign('loginURL',$url);
+  $smarty->display('index_notlogin.tpl');
 }
 
-try {
-    $twitter = new Twitter();
-    $oauth = $twitter->oAuth($consumer_key, $consumer_secret);
-    $requestToken = $oauth->getRequestToken();
-    $url = $oauth->getAuthorizeUrl($requestToken);
-    print('<a href="'.$url.'"><img src="image/sign-in-with-twitter-l.png"></a>');
-    $_SESSION['twitter'] = $twitter;
-    $_SESSION['oauth'] = $oauth;
-} catch (Exception $e) {
-    echo $e;
-}
-
-*/
 

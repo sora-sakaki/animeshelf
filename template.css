@@ -2,7 +2,7 @@ body {
   margin: 0px;
   padding: 0px;
   width: 95%;
-  background-color: #fee;
+  background-color: #fff;
 }
 
 header {
@@ -21,7 +21,7 @@ h1 {
 }
 
 h1 a {
-  color: black;
+  color: #f64;
   text-decoration: none;
 }
 
@@ -35,17 +35,19 @@ nav {
 ul {
   list-style-type: none;
   display: block;
+  float:right;
+  border-bottom: double 5px #f64;
+  margin-bottom: 5px;
 }
 
 nav ul {
   display: inline;
   font-family: 'Raleway', sans-serif;
-  float:right;
 }
 
 nav ul li {
   width: 150px;
-  height: 50px;
+  height: 20px;
   float: left;
   text-align: center;
 }
@@ -60,6 +62,38 @@ nav ul li h2 {
 nav ul li h2 a {
   color: black;
   text-decoration: none;
+}
+
+nav #userStatus {
+  clear:right;
+  width: 200px;
+  height: 75px;
+  background-color: #fca;
+  float:right;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  -moz-box-shadow: 1px 1px 3px #000;
+}
+
+nav #userStatus #userIcon {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border: solid 1px black;
+  float: left;
+}
+
+nav #userStatus #userId {
+  font-family: 'Raleway', sans-serif;
+  padding-left: 10px;
+  padding-top: 15px;
+}
+
+nav #userStatus #userScore {
+  font-family: 'Raleway', sans-serif;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 article {
@@ -84,8 +118,6 @@ article #mainContents {
   background-color: #fff;
   -webkit-box-shadow: 1px 1px 3px #000;
   -moz-box-shadow: 1px 1px 3px #000;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   -webkit-box-ordinal-group: 1;
   -moz-box-ordinal-group: 1;
 }
