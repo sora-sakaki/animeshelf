@@ -1,7 +1,17 @@
 <?php
 require_once dirname(__FILE__).'/lib/Twitter.php';
+require_once dirname(__FILE__).'/lib/smarty/Smarty.class.php';
 require_once dirname(__FILE__).'/config.php';
 
+$smarty = new Smarty();
+
+$smarty->template_dir = dirname(__FILE__).'/templates/';
+$smarty->compile_dir = dirname(__FILE__).'/templates_c/';
+$smarty->config_dir = dirname(__FILE__).'/configs/';
+$smarty->cache_dir = dirname(__FILE__).'/cache/';
+
+$smarty->display('template.html');
+/*
 session_start();
 if(isset($_SESSION['userName'])){
     print('welcome : '.$_SESSION['userName']);
@@ -22,4 +32,6 @@ try {
 } catch (Exception $e) {
     echo $e;
 }
+
+*/
 
