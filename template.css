@@ -4,18 +4,19 @@ body {
   width: 95%;
 }
 
-h1 {
-  font-size: 2em;
-}
-h1 a {
-  color: black;
-  text-decoration: none;
-}
-
 header {
   margin: 0;
   padding-top: 10px;
   padding-left: 60px;
+}
+
+h1 {
+  font-size: 2em;
+  float: left;
+}
+h1 a {
+  color: black;
+  text-decoration: none;
 }
 
 ul {
@@ -37,14 +38,7 @@ nav ul li {
 
 nav ul li h2 {
   display: inline;
-  font-size: 2em;
-  margin: 0;
-  line-height: 100%;
-}
-
-nav ul li h1 {
-  display: inline;
-  font-size: 2em;
+  font-size: 1em;
   margin: 0;
   line-height: 100%;
 }
@@ -53,7 +47,6 @@ nav ul li h2 a {
   color: black;
   text-decoration: none;
 }
-
 
 article {
   margin-left: 50px;
