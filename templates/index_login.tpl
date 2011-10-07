@@ -12,10 +12,10 @@
 <h1><a href="index.php">animeshelf</a></h1>
 <nav>
 <ul>
-<li><h2>{$userName}</h2></li>
-<li><h2><a href="/add/">みた登録</a></h2></li>
-<li><h2><a href="/shelf/">My シェルフ</a></h2></li>
-<li><h2><a href="/logout.php">ログアウト</a></h2></li>
+<li class="current"><h2><a href="index.php">{$userName}</a></h2></li>
+<li><h2><a href="add_my_anime.php">みた登録</a></h2></li>
+<li><h2><a href="shelf/">My シェルフ</a></h2></li>
+<li><h2><a href="logout.php">ログアウト</a></h2></li>
 </ul>
 </nav>
 </header>

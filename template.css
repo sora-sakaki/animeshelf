@@ -64,36 +64,9 @@ nav ul li h2 a {
   text-decoration: none;
 }
 
-nav #userStatus {
-  clear:right;
-  width: 200px;
-  height: 75px;
-  background-color: #fca;
-  float:right;
-  -webkit-box-shadow: 1px 1px 3px #000;
-  -moz-box-shadow: 1px 1px 3px #000;
-}
-
-nav #userStatus #userIcon {
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-right: 10px;
-  width: 50px;
-  height: 50px;
-  border: solid 1px black;
-  float: left;
-}
-
-nav #userStatus #userId {
-  font-family: 'Raleway', sans-serif;
-  padding-left: 10px;
-  padding-top: 15px;
-}
-
-nav #userStatus #userScore {
-  font-family: 'Raleway', sans-serif;
-  padding-left: 10px;
-  padding-top: 10px;
+nav ul li.current h2 a {
+  color: #f96;
+  font-weight: bold;
 }
 
 article {
@@ -126,3 +99,27 @@ footer {
   margin-top: 10px;
   text-align: right;
 }
+
+section {
+  margin : 20px;
+  border: solid 1px #f64;
+
+  -moz-border-radius-bottomright: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -khtml-border-radius-bottomright: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+section > h1 {
+  margin-bottom: 5px;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.5em;
+  color: #f64;
+  background-color: #fca;
+}
+
+section > form {
+  margin : 10px;
+}
+
+

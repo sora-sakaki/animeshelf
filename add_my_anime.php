@@ -19,19 +19,9 @@ if($isUseDummyUser === true) {
 
 if(isset($_SESSION['oauthToken']['screen_name'])){
   $smarty->assign('userName', $_SESSION['oauthToken']['screen_name']);
-  $smarty->display('index_login.tpl');
+  $smarty->display('add_my_anime.tpl');
 } else {
-  try {
-      $twitter = new Twitter();
-      $oauth = $twitter->oAuth($consumer_key, $consumer_secret);
-      $requestToken = $oauth->getRequestToken();
-      $url = $oauth->getAuthorizeUrl($requestToken);
-      $_SESSION['twitter'] = $twitter;
-      $_SESSION['oauth'] = $oauth;
-  } catch (Exception $e) {
-      echo $e;
-  }
-  $smarty->assign('loginURL',$url);
-  $smarty->display('index_notlogin.tpl');
+    header("HTTP/1.1 301");
+    header("Location: {$rootURL}/login.php");
 }
 
