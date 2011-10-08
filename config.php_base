@@ -1,0 +1,18 @@
+<?php
+
+// twitter
+$consumer_key = '';
+$consumer_secret = '';
+
+// basic
+$rootURL = '';
+
+// mysq;
+$mysql_server = '';
+$mysql_user = '';
+$mysql_pass = '';
+
+// debug
+$isUseDummyUser = true;
+$dummyUser = 'hoge';
+
