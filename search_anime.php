@@ -21,7 +21,7 @@ if(isset($_SESSION['oauthToken']['screen_name'])){
   if (!$link) {
     die('connecting database-server is failed.');
   }
-  $db_selected = mysql_select_db('animeshelf', $link);
+  $db_selected = mysql_select_db($mysql_database, $link);
   if (!$db_selected) {
     die('selecting database is failed.');
   }
