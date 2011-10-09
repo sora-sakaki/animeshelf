@@ -7,59 +7,8 @@
 <link rel="stylesheet" type="text/css" href="template.css" />
 <link rel="stylesheet" type="text/css" href="add_my_anime.css" />
 <script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="add_my_anime.js"></script>
 
-<script type="text/javascript">
-window.onload = function () {
-  var comment = document.getElementById('comment');
-  comment.addEventListener('keydown', function (data){
-    console.log(data);
-    if (data.keyCode === 13) {
-      if (data.ctrlKey) {
-        document.sendForm.submit();
-        return false;
-      }
-    }
-  });
-}
-function openSearch() {
-  jQuery.get('search_anime.php?searchKey='+document.searchForm.searchKey.value, function (data) {
-    try {
-      var jsonData = JSON.parse(data);
-    } catch (e) {
-      console.log("error : " + data);
-      return;
-    }
-
-    var titleHTML = '';
-    titleHTML += '<div class="animeLine">';
-    for (var i = 0; i < jsonData.length; i++) {
-      titleHTML += '<div class="animeBlock" id="title_'+i+'">';
-      titleHTML += '<div class="animeSamnail" id="title_'+i+'_samnail">';
-      titleHTML += '<img src="'+jsonData[i]['title'].samnail_url+'">';
-      titleHTML += '</div>';
-      titleHTML += '<div class="animeName" id="title_'+i+'_name">';
-      titleHTML += jsonData[i]['title'].name;
-      titleHTML += '</div><!-- animeSamnail -->';
-      titleHTML += '</div><!-- animeBlock -->';
-    }
-    titleHTML += '</div><!-- animeLine -->';
-    var mainDiv = document.createElement('div');
-    mainDiv.setAttribute('id', 'searchResultMain');
-    mainDiv.setAttribute('style', 'display:none;position:fixed;width:80%;height:80%;left:10%;top:10%;background-color:#fff;z-index:100;opacity:1');
-    mainDiv.innerHTML = titleHTML;
-
-    var backDiv = document.createElement('div');
-    backDiv.setAttribute('id', 'searchResult');
-    backDiv.setAttribute('style', 'display:none;position:fixed;width:100%;height:100%;left:0;top:0;background-color:#521;z-index:99;opacity:0.8');
-
-    document.body.appendChild(mainDiv);
-    document.body.appendChild(backDiv);
-    jQuery('#searchResult').slideDown(500, function () {
-      jQuery('#searchResultMain').fadeIn(500);
-    });
-  });
-}
-</script>
 </head>
 <body>
 
@@ -81,7 +30,7 @@ function openSearch() {
 <h1>検索</h1>
 <!-- <form name="searchForm" action="javascript:void(0)" onSubmit="document.sendForm.comment.focus()">-->
 <form name="searchForm" action="javascript:void(0)" onSubmit="openSearch()">
-<p>アニメ名：<input type="text" name="searchKey" autofocus>
+<p>アニメ名：<input type="text" id="searchKey" name="searchKey" autofocus>
 <input type="submit" value="検索"></p>
 </form>
 </section>
